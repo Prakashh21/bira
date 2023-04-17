@@ -6,7 +6,7 @@ export const hashPassword = (password) => {
   bcrypt.hash(password , 10)
 }
 
-const comparePassowords = (plainTextPassword , hashedPassword) => {
+export const comparePasswords = (plainTextPassword , hashedPassword) => {
     bcrypt.compare(plainTextPassword , hashedPassword)
 
 }
