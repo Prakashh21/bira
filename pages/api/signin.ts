@@ -23,22 +23,23 @@ export default async function signin(
         const isUser = await comparePasswords(req.body.password, user.password)
 
         if (isUser) {
-            const jwt = await createJWT(user)
+            const jwt = await createJWT(user);
             res.setHeader(
-                "Set-Cookie",
-                serialize(process.env.COOKIE_NAME, jwt, {
-                    httpOnly: true,
-                    path: "/",
-                    maxAge: 60 * 60 * 24 * 7,
-                })
+              "Set-Cookie",
+              serialize(process.env.COOKIE_NAME, jwt, {
+                httpOnly: true,
+                path: "/",
+                maxAge: 60 * 60 * 24 * 7,
+              })
             );
             res.status(201);
             res.end();
+          } else {
+            res.status(401);
+            res.json({ error: "Invalid login" });
+          }
+        } else {
+          res.status(402);
+          res.end();
         }
-
-    }else{
-        res.status(402)
-        res.end()
-    }
-
-}
+      }
