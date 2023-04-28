@@ -18,8 +18,6 @@ export default async function signin(
             res.json({ error: "Invalid login" });
             return;
         }
-
-
         const isUser = await comparePasswords(req.body.password, user.password)
 
         if (isUser) {

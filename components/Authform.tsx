@@ -33,11 +33,11 @@ const registerContent = {
     const [formState , setFormState] = useState({...initial})
 
     const router = useRouter()
-
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if(mode === register){
+        if(mode === "register"){
+            console.log("logging formstate ----> ",formState)
             await register(formState)
         }else {
             await signin(formState)
