@@ -9,6 +9,8 @@ export default async function register(req: NextApiRequest , res: NextApiRespons
 console.log("logging in request object of register api",req.body.firstName)
 console.log("logging in request object of register api",req.body.lastName)
 console.log("logging in request object of register api",req.body.password)
+const samplePass = await hashPassword(req.body.password)
+console.log("logging in request object of register api -----> ", samplePass)
     if(req.method === 'POST'){
         const user = await db.user.create({
             data: {

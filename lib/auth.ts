@@ -1,13 +1,14 @@
 import bcrypt from "bcrypt"
+import { SignJWT } from "jose"
 import { db } from "./db"
 
 
 export const hashPassword = (password) => {
-  bcrypt.hash(password , 10)
+ return bcrypt.hash(password , 10)
 }
 
 export const comparePasswords = (plainTextPassword , hashedPassword) => {
-    bcrypt.compare(plainTextPassword , hashedPassword)
+   return  bcrypt.compare(plainTextPassword , hashedPassword)
 
 }
 
