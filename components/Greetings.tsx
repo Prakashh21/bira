@@ -29,3 +29,5 @@ const Greetings = async () => {
     </Card>
   );
 };
+
+export default Greetings
