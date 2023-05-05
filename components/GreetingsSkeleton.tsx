@@ -19,3 +19,5 @@ const GreetingsSkeleton = () => {
     </Card>
   );
 };
+
+export default GreetingsSkeleton;
