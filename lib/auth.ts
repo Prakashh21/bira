@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt"
-import { SignJWT } from "jose"
+import { jwtVerify, SignJWT } from "jose"
 import { db } from "./db"
 
 
@@ -24,6 +24,7 @@ export const createJWT = (user) => {
       .setNotBefore(iat)
       .sign(new TextEncoder().encode(process.env.JWT_SECRET));
   };
+
 
   export const validateJWT = async (jwt) => {
     const { payload } = await jwtVerify(
