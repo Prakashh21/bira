@@ -13,6 +13,7 @@ export const comparePasswords = (plainTextPassword , hashedPassword) => {
 }
 
 
+
 export const createJWT = (user) => {
     // return jwt.sign({ id: user.id }, 'cookies')
     const iat = Math.floor(Date.now() / 1000);

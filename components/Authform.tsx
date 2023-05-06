@@ -55,7 +55,7 @@ const registerContent = {
 
     return (
         <Card>
-          <div className="w-full">
+          <div className="w-full ">
             <div className="text-center">
               <h2 className="text-3xl mb-2">{content.header}</h2>
               <p className="tex-lg text-black/25">{content.subheader}</p>
