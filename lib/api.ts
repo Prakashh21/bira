@@ -25,6 +25,7 @@ const fetcher = async ({ url, method, body, json = true }) => {
       url: "/api/register",
       method: "POST",
       body: user,
+      json: false
     });
   };
 
@@ -33,5 +34,6 @@ const fetcher = async ({ url, method, body, json = true }) => {
       url: "/api/signin",
       method: "POST",
       body: user,
+      json: false
     });
   };
