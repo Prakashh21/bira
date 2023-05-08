@@ -1,4 +1,4 @@
-# An app to track your projects , made using NextJS.
+## An app to track your projects , made using NextJS.
 
 ## Getting Started
 
