@@ -4,6 +4,7 @@ import { useState } from "react";
 import Modal from "react-modal";
 import Button from "./Button";
 import Input from "./Input";
+import { Router } from "next/router";
 
 
 Modal.setAppElement("#modal");
@@ -25,6 +26,8 @@ const NewProject = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         await createNewProject(name)
+        // Router.reload();
+        window.location.reload();
         closeModal()
     }
 
