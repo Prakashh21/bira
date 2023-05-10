@@ -1,5 +1,5 @@
 "use client";
-import { createNewProject } from "@/lib/api";
+import { createNewProject, createNewTask } from "@/lib/api";
 import { useState } from "react";
 import Modal from "react-modal";
 import Button from "./Button";
@@ -27,8 +27,8 @@ const NewProject = ({mode , projectId}) => {
         e.preventDefault()
 
         // mode === 'project' ? await createNewProject(name) : await createNewTask(name , projectId)
-
-        await createNewProject(name)
+        mode === 'project' ? await createNewProject(name) : await createNewTask(name , projectId);
+        // await createNewProject(name)
         // Router.reload();
         window.location.reload();
         closeModal()
@@ -36,7 +36,7 @@ const NewProject = ({mode , projectId}) => {
 
     return (
         <div className="px-6 py-8 hover:scale-105 transition-all ease-in-out duration-200 flex justify-center items-center">
-          <Button onClick={() => openModal()}>+ New Project</Button>
+          <Button onClick={() => openModal()}>+ {mode === 'project' ? `New Project` : `New Task`}</Button>
 
           <Modal
             isOpen={modalIsOpen}
@@ -44,7 +44,7 @@ const NewProject = ({mode , projectId}) => {
             overlayClassName="bg-[rgba(0,0,0,.4)] flex justify-center items-center absolute top-0 left-0 h-screen w-screen"
             className="w-3/4 bg-white rounded-xl p-8"
           >
-            <h1 className="text-3xl mb-6">New Project</h1>
+            <h1 className="text-3xl mb-6">{mode === 'project' ? `New Project` : `New Task`}</h1>
             <form className="flex items-center" onSubmit={handleSubmit}>
               <Input
                 placeholder="project name"

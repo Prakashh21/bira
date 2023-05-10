@@ -50,7 +50,7 @@ export default async function Page() {
             ))
           }
           <div className="w-1/3 p-3">
-            <NewProject />
+            <NewProject mode="project"/>
           </div>
         </div>
         <div className="mt-6 flex-2 grow w-full flex">
