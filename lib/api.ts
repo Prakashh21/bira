@@ -47,3 +47,15 @@ const fetcher = async ({ url, method, body, json = true }) => {
       json: true
     })
   }
+
+  export const createNewTask = async (name , projectId) => {
+    return fetcher({
+      url: '/api/task',
+      method: 'POST',
+      body: {name , projectId},
+      json: true
+    })
+  }
+
+
+  // export const createNewTask = async (name)

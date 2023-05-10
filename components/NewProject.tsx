@@ -9,7 +9,7 @@ import { Router } from "next/router";
 
 Modal.setAppElement("#modal");
 
-const NewProject = () => {
+const NewProject = ({mode , projectId}) => {
     const [modalIsOpen , setIsOpen] = useState(false)
     const [name , setName] = useState('')
 
@@ -25,6 +25,9 @@ const NewProject = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+
+        // mode === 'project' ? await createNewProject(name) : await createNewTask(name , projectId)
+
         await createNewProject(name)
         // Router.reload();
         window.location.reload();
