@@ -18,7 +18,7 @@ const getData = async (id) => {
 
     return project;
 }
-
+// fixed remote
 
 export default async function ProjectPage({ params }) {
     const project = await getData(params.id);
